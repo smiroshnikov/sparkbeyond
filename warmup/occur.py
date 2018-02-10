@@ -1,6 +1,9 @@
 """"
 will check for max words occurrences in single file
 """
+import multiprocessing
+
+import time
 
 
 def occurance_of_words_file(N_most_occured_words, file_path):
@@ -23,6 +26,12 @@ def occurance_of_words_file(N_most_occured_words, file_path):
     return occur_dict
 
 
-result = occurance_of_words_file(3, "my_word_file.txt")
-for k, v in result.items():
-    print(k, v)
+if __name__ == "__main__":
+    start = time.time()
+    pool = multiprocessing.Pool()
+    result = occurance_of_words_file(3, "my_word_file.txt")
+    for k, v in result.items():
+        print(k, v)
+
+    end = time.time()
+    print(f'Time to complete: {end - start:.2f}')

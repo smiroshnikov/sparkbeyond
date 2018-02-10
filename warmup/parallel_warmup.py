@@ -36,7 +36,8 @@ def check_if_any_double_letter_exist(word_list):
 if __name__ == "__main__":
     start = time.time()
 
-    with open('words.txt') as f:  # difference between using file and with
+    # with open('words.txt') as f:  # difference between using file and with
+    with open('my_word_file.txt') as f:  # difference between using file and with
         lines = f.readlines()
         lines = [line for line in lines]  # convert lines into string
 
